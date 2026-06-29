@@ -1,0 +1,6 @@
+Модель,Архитектура,Среднее кол-во,Макс. кол-во,Время (мс),Размер (Мб)
+YOLOv8n,Anchor-free CNN,1.1,4,279.1,6.2
+YOLOv8x,Anchor-free CNN (Large),1.3,4,130.6,130.0
+YOLOv5nu,Anchor-based CNN,0.9,3,24.2,5.3
+RT-DETR,Vision Transformer,2.0,9,160.4,66.2
+HOG+SVM,Classical ML,0.6,3,258.2,1.1

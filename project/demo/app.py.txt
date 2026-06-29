@@ -1,0 +1,35 @@
+import gradio as gr
+import cv2
+from src.train import yolo
+from src.inference import detect_people
+from src.evaluate import count_yolo, count_hog
+
+def process_image(img):
+    if img is None:
+        return None, "Ошибка"
+    
+    models = {
+        "YOLOv8n": lambda x: count_yolo(x, yolo, 0.25),
+        "YOLOv8x": lambda x: count_yolo(x, yolo, 0.25),
+        "YOLOv5nu": lambda x: count_yolo(x, yolo, 0.25),
+        "RT-DETR": lambda x: count_yolo(x, yolo, 0.25),
+        "HOG+SVM": count_hog
+    }
+    
+    results = {}
+    for name, func in models.items():
+        results[name] = func(img)
+    
+    output = "РЕЗУЛЬТАТЫ:\n" + "="*30 + "\n"
+    for name, count in results.items():
+        output += f"{name}: {count} чел.\n"
+    
+    return img, output
+
+demo = gr.Interface(
+    fn=process_image,
+    inputs=gr.Image(type="numpy"),
+    outputs=[gr.Image(), gr.Textbox()]
+)
+
+demo.launch(share=True)

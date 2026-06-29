@@ -1,0 +1,14 @@
+from ultralytics import YOLO
+import cv2
+
+# YOLO модели
+yolo = YOLO("yolov8n.pt")
+yolo_large = YOLO("yolov8x.pt")
+yolo_v5 = YOLO("yolov5nu.pt")
+detr = YOLO("rtdetr-l.pt")
+
+# HOG + SVM
+hog = cv2.HOGDescriptor()
+hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+
+print("Все модели загружены!")

@@ -1,0 +1,61 @@
+{
+  "project": {
+    "name": "Crowd Counting Comparison",
+    "variant": 15,
+    "task": "\u041f\u043e\u0434\u0441\u0447\u0451\u0442 \u043b\u044e\u0434\u0435\u0439 \u0432 \u0442\u043e\u043b\u043f\u0435",
+    "num_images": 7,
+    "device": "cuda"
+  },
+  "models": {
+    "YOLOv8n": {
+      "mean_count": 1.1428571428571428,
+      "min_count": 0,
+      "max_count": 4,
+      "std_count": 1.355261854357877,
+      "mean_time_ms": 279.1378157479422,
+      "std_time_ms": 639.4646074816795,
+      "size_mb": 6.2
+    },
+    "YOLOv8x": {
+      "mean_count": 1.2857142857142858,
+      "min_count": 0,
+      "max_count": 4,
+      "std_count": 1.4846149779161806,
+      "mean_time_ms": 130.55130413600378,
+      "std_time_ms": 199.90988562360545,
+      "size_mb": 130.0
+    },
+    "YOLOv5nu": {
+      "mean_count": 0.8571428571428571,
+      "min_count": 0,
+      "max_count": 3,
+      "std_count": 0.9897433186107869,
+      "mean_time_ms": 24.18375015258789,
+      "std_time_ms": 30.02217514621474,
+      "size_mb": 5.3
+    },
+    "RT-DETR": {
+      "mean_count": 2.0,
+      "min_count": 0,
+      "max_count": 9,
+      "std_count": 3.0237157840738176,
+      "mean_time_ms": 160.40764536176408,
+      "std_time_ms": 268.165519494991,
+      "size_mb": 66.2
+    },
+    "HOG+SVM": {
+      "mean_count": 0.5714285714285714,
+      "min_count": 0,
+      "max_count": 3,
+      "std_count": 1.049781318335648,
+      "mean_time_ms": 258.20176942007885,
+      "std_time_ms": 44.40373690081691,
+      "size_mb": 1.1
+    }
+  },
+  "summary": {
+    "best_accuracy": "RT-DETR",
+    "fastest": "YOLOv5nu",
+    "best_balance": "YOLOv5nu"
+  }
+}

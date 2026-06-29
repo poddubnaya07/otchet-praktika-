@@ -1,0 +1,10 @@
+ultralytics
+gradio
+scipy
+opencv-python-headless
+torch
+numpy
+pandas
+matplotlib
+requests
+Pillow

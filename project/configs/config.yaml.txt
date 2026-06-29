@@ -1,0 +1,25 @@
+models:
+  YOLOv8n:
+    weight: yolov8n.pt
+    conf: 0.25
+  YOLOv8x:
+    weight: yolov8x.pt
+    conf: 0.25
+  YOLOv5nu:
+    weight: yolov5nu.pt
+    conf: 0.25
+  RT-DETR:
+    weight: rtdetr-l.pt
+    conf: 0.25
+  HOG+SVM:
+    type: classical
+    winStride: 8
+    padding: 4
+    scale: 1.05
+
+data:
+  path: data/test_images/
+  format: jpg
+
+evaluation:
+  metrics: [mean_count, max_count, inference_time]
